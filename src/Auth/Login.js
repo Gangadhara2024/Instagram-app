@@ -1,71 +1,54 @@
-import { Button, Form, Input, Alert } from "antd";
-import React, { useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { Link, useNavigate } from "react-router-dom";
-import { updateAuthStatus } from "../Redux/authSlice";
+import { Alert, Button, Form, Input } from "antd";
+import { useState } from "react";
+import { Link } from "react-router-dom";
 
 const Login = ({ auth }) => {
   const [apistatus, setApistatus] = useState("init");
-  const dispatch = useDispatch();
-  const navigate = useNavigate();
 
-  const submitform = async (loginInfo) => {
+  const submitLogin = async (logindata) => {
     setApistatus("pending");
-    const { success } = await auth.loginUser(loginInfo);
-    if (success) {
-      dispatch(updateAuthStatus(true));
-      navigate("/home");
-    } else {
-      setApistatus("error");
-    }
+    const { success } = await auth.loginUser(logindata);
+    setApistatus(success ? "success" : "error");
   };
-
   return (
     <div className="form">
-      {/* {apistatus === "success" && (
-        <Alert type="success" showIcon message="Login successfull" closable />
-      )} */}
-      {apistatus === "error" && (
-        <Alert
-          type="error"
-          showIcon
-          message="Invalid credentials..."
-          closable
-        />
+      {apistatus === "success" && (
+        <Alert showIcon message="Login successfull..." type="success" />
       )}
-      <Form onFinish={submitform} layout="vertical">
+      {apistatus === "error" && (
+        <Alert showIcon message="Invalid credentials !" type="error" />
+      )}
+      <Form layout="vertical" onFinish={submitLogin}>
         <Form.Item
-          label="Email"
           name="email"
-          rules={[
-            { type: "email", message: "please enter valid email" },
-            { required: true, message: "please enter mail" },
-          ]}
+          label="Email"
+          rules={[{ required: true, message: "enter valid email" }]}
         >
-          <Input placeholder="Enter your email" />
+          <Input placeholder="enter your mail" />
         </Form.Item>
+
         <Form.Item
-          label="Password"
           name="password"
-          rules={[{ required: true, message: "Please enter password" }]}
+          label="Password"
+          rules={[{ required: true, message: "enter correct password" }]}
         >
-          <Input.Password placeholder="password" />
+          <Input.Password placeholder="password"></Input.Password>
         </Form.Item>
         <Button
-          loading={apistatus === "pending"}
           htmlType="submit"
-          block
           type="primary"
+          block
+          loading={apistatus === "pending"}
         >
           Login
         </Button>
+        <b>
+          New user create account ?
+          <Link to="/signup" className="link">
+            signup here
+          </Link>
+        </b>
       </Form>
-      <p>
-        New user create account ?
-        <Link to="/signup" className="link">
-          signin here
-        </Link>
-      </p>
     </div>
   );
 };

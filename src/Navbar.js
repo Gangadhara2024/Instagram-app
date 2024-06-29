@@ -1,8 +1,8 @@
 import { useContext } from "react";
-import { Themecontext } from "../App";
+import { ThemeContext } from "./App";
 
-export const Navbar = () => {
-  const { theme, toggleTheme } = useContext(Themecontext);
+const Navbar = () => {
+  const { theme, toggleTheme } = useContext(ThemeContext);
 
   return (
     <div className={`navbar ${theme === "dark" ? "dark-navbar" : ""}`}>
@@ -10,6 +10,7 @@ export const Navbar = () => {
         dark_mode
       </button>
     </div>
-    
   );
 };
+
+export default Navbar;
