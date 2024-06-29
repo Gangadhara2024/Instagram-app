@@ -1,0 +1,28 @@
+.profile-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  border-bottom: 1px solid blue;
+  .user-info {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    p {
+      margin: 0px;
+    }
+  }
+  .create {
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    background-color: rgb(142, 191, 235);
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    span {
+      font-size: 3rem;
+    }
+  }
+}

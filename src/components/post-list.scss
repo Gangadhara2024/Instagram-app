@@ -1,0 +1,30 @@
+.posts-lists {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 10px;
+  .post {
+    border: 1px solid red;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    .footer {
+      display: flex;
+      flex-direction: row-reverse;
+      align-items: center;
+      gap: 10px;
+      div {
+        display: flex;
+        align-items: center;
+        gap: 4px;
+        padding: 6px 2px;
+        cursor: pointer;
+        box-shadow: 1px 1px 3px red;
+      }
+    }
+  }
+  img {
+    height: 200px;
+  }
+}
