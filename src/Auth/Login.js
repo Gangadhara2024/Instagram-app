@@ -1,22 +1,37 @@
 import { Alert, Button, Form, Input } from "antd";
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { updateAuthStatus } from "../Redux/Authslice";
 
 const Login = ({ auth }) => {
   const [apistatus, setApistatus] = useState("init");
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const submitLogin = async (logindata) => {
     setApistatus("pending");
+
     const { success } = await auth.loginUser(logindata);
-    setApistatus(success ? "success" : "error");
+    if (success) {
+      dispatch(updateAuthStatus(true));
+      navigate("/home");
+    } else {
+      setApistatus("error");
+    }
   };
   return (
     <div className="form">
-      {apistatus === "success" && (
-        <Alert showIcon message="Login successfull..." type="success" />
-      )}
+      {/* {apistatus === "success" && (
+        <Alert
+          showIcon
+          message="Login successfull..."
+          type="success"
+          closable
+        />
+      )} */}
       {apistatus === "error" && (
-        <Alert showIcon message="Invalid credentials !" type="error" />
+        <Alert showIcon message="Invalid credentials !" type="error" closable />
       )}
       <Form layout="vertical" onFinish={submitLogin}>
         <Form.Item

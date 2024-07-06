@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { ThemeContext } from "./App";
+import { ThemeContext } from "../App";
 
 const Navbar = () => {
   const { theme, toggleTheme } = useContext(ThemeContext);

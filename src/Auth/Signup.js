@@ -10,6 +10,7 @@ const Signup = ({ auth }) => {
     const { success } = await auth.signupUser(data);
     setApistatus(success ? "success" : "error");
   };
+
   return (
     <div className="form">
       {apistatus === "success" && (
@@ -50,7 +51,7 @@ const Signup = ({ auth }) => {
           label="Password"
           rules={[{ required: true, message: "enter correct password" }]}
         >
-          <Input.Password placeholder="password"></Input.Password>
+          <Input.Password placeholder="password" />
         </Form.Item>
         <Form.Item
           name="gender"

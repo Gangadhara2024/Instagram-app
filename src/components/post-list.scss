@@ -1,0 +1,30 @@
+.posts-list {
+  // display: flex;
+  // flex-direction: column;
+  gap: 10px;
+  padding: 20px;
+  .post {
+    border: 1px solid #e3e3e3;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+  img {
+    height: 300px;
+  }
+  .footer {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    gap: 10px;
+    div {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      padding: 4px;
+      box-shadow: 1px 1px 3px #2b05ea;
+      cursor: pointer;
+    }
+  }
+}

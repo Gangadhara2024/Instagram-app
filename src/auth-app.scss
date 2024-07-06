@@ -44,7 +44,7 @@ $containerHeight: 100vh - $navbarHeight;
   }
 }
 .dark-navbar {
-  background-color: black;
+  background-color: rgb(68, 63, 63);
   .theme {
     color: white;
     &:hover {
@@ -53,7 +53,7 @@ $containerHeight: 100vh - $navbarHeight;
   }
 }
 .dark-container {
-  background-color: rgb(11, 10, 10);
+  background-color: rgb(15, 16, 16);
   .form {
     box-shadow: none;
     border: 0.1px solid white;

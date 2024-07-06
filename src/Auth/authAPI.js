@@ -55,6 +55,8 @@ const authAPI = () => {
         data: credentials,
       });
       console.log(response.data);
+      const token = response.data.token;
+      localStorage.setItem("token", token);
       return { success: true };
     } catch (error) {
       alert("login failed");
