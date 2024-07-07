@@ -1,5 +1,5 @@
 import { Tabs } from "antd";
-import "./profile.scss";
+import "./styles/profile.scss";
 import Suggestions from "./Suggestions";
 
 const Profile = () => {

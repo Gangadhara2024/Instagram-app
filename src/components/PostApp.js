@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { UserInfo } from "./UserInfo";
 import { PostLists } from "./PostLists";
-import "./maindiv.scss";
+import "./styles/PostApp.scss";
 import Profile from "./Profile";
 import { fetchAllPosts, userInfoAPI } from "../Redux/thunk";
 

@@ -1,0 +1,33 @@
+.info-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-radius: 6px;
+    background-color: #f0d5d5;
+    color: rgb(5, 3, 3);
+    position: sticky;
+    top: 0px;
+    .user-info {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      p {
+        margin: 0px;
+      }
+    }
+    .create {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      cursor: pointer;
+      background-color: rgb(229, 202, 168);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border: none;
+      span {
+        font-size: 3rem;
+      }
+    }
+  }

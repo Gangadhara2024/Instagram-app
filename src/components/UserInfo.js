@@ -1,5 +1,5 @@
 import { useSelector } from "react-redux";
-import "./user-info.scss";
+import "./styles/user-info.scss";
 import { CreatePost } from "./CreatePost";
 import { Spin } from "antd";
 

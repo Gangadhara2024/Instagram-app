@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from "react-redux";
-import "./card-list.scss";
+import "./styles/card-list.scss";
 import { Button } from "antd";
 
 const CardList = ({ user }) => {

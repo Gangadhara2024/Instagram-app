@@ -1,7 +1,7 @@
-import { Carousel, Spin } from "antd";
+import { Spin } from "antd";
 import React from "react";
 import { useSelector } from "react-redux";
-import "./post-list.scss";
+import "./styles/post-list.scss";
 
 export const PostLists = () => {
   const { apiStatus, data } = useSelector((state) => state.POST.posts);

@@ -3,7 +3,7 @@ import Login from "./Auth/Login";
 import Signup from "./Auth/Signup";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import authAPI from "./Auth/authAPI";
-import "./auth-app.scss";
+import "./styles/auth-app.scss";
 import Navbar from "./Auth/Navbar";
 import { useSelector } from "react-redux";
 import { Notfound } from "./Auth/Notfound";
