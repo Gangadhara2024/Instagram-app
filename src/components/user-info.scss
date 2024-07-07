@@ -3,9 +3,11 @@
   justify-content: space-between;
   align-items: center;
   padding: 10px;
-  border-radius: 12px;
-  background-color: #c79a9a;
+  border-radius: 6px;
+  background-color: #f0d5d5;
   color: rgb(5, 3, 3);
+  position: sticky;
+  top: 0px;
   .user-info {
     display: flex;
     flex-direction: column;

@@ -1,17 +1,18 @@
 .posts-list {
-  // display: flex;
-  // flex-direction: column;
+  display: flex;
+  flex-direction: column;
   gap: 10px;
-  padding: 20px;
+  padding: 10px;
   .post {
     border: 1px solid #e3e3e3;
-    padding: 10px;
+    padding: 20px;
     display: flex;
     flex-direction: column;
     gap: 5px;
+    box-shadow: 1px 1px 5px rgb(227, 6, 43);
   }
   img {
-    height: 300px;
+    height: 200px;
   }
   .footer {
     display: flex;
@@ -25,6 +26,7 @@
       padding: 4px;
       box-shadow: 1px 1px 3px #2b05ea;
       cursor: pointer;
+      background-color: rgb(244, 205, 205);
     }
   }
 }

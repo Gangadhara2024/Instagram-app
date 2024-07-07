@@ -1,11 +1,7 @@
 import { Endpoints } from "../Network/Endpoint";
 import { Request } from "../Network/Request";
-import {
-  AddPost,
-  updatePostInfo,
-  updatePostStatus,
-  updateUserInfo,
-} from "./Postslice";
+import { AddPost, updatePostInfo, updatePostStatus, updateUserInfo } from "./Postslice";
+
 
 export const userInfoAPI = async (dispatch) => {
   dispatch(updateUserInfo({ apiStatus: "pending" }));

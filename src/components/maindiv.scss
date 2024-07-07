@@ -1,1 +1,17 @@
-
+.home-container {
+  //   background-color: black;
+  display: grid;
+  grid-template-columns: 4fr 8fr;
+  height: 100vh;
+  overflow: scroll;
+  .left-box {
+    // background-color: rgb(187, 198, 218);
+    height: 100%;
+    overflow: scroll;
+  }
+  .right-box {
+    background-color: rgba(252, 251, 250, 0.888);
+    height: 100%;
+    overflow: scroll;
+  }
+}

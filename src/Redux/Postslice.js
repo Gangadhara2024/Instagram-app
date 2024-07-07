@@ -12,7 +12,7 @@ const initialState = {
   createAPIStatus: "init",
 };
 const Postslice = createSlice({
-  name: "post",
+  name: "POST",
   initialState,
   reducers: {
     updateUserInfo: (state, action) => {

@@ -1,11 +1,10 @@
-import React, { useState } from "react";
 import { useSelector } from "react-redux";
 import "./user-info.scss";
 import { CreatePost } from "./CreatePost";
 import { Spin } from "antd";
 
 export const UserInfo = () => {
-  const { apiStatus, data } = useSelector((state) => state.post.userInfo);
+  const { apiStatus, data } = useSelector((state) => state.POST.userInfo);
 
   if (apiStatus === "init" || apiStatus === "pending") {
     return <Spin />;

@@ -4,10 +4,10 @@ import { useSelector } from "react-redux";
 import "./post-list.scss";
 
 export const PostLists = () => {
-  const { apiStatus, data } = useSelector((state) => state.post.posts);
+  const { apiStatus, data } = useSelector((state) => state.POST.posts);
 
   if (apiStatus === "init" || apiStatus === "pending") {
-    return <Spin />;
+    return <Spin size="large" />;
   }
 
   if (apiStatus === "error") {
@@ -15,16 +15,14 @@ export const PostLists = () => {
   }
   return (
     <div className="posts-list">
-      {data?.map?.((post) => {
+      {data?.map?.((post, idx) => {
         return (
-          <div id={post._id} className="post">
+          <div id={post._id} key={idx} className="post">
             <b>{post.title} </b>
             <p>{post.content} </p>
-            <Carousel>
-              {post.imageUrls.map((image, index) => {
-                return <img src={image} key={index} alt={image} />;
-              })}
-            </Carousel>
+            {post.imageUrls.map((image, index) => {
+              return <img src={image} key={index} alt={image} />;
+            })}
             <div className="footer">
               <div>
                 <span className="material-icons">favorite</span>

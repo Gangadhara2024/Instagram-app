@@ -14,7 +14,7 @@ export const ThemeContext = createContext();
 const App = () => {
   const [theme, setTheme] = useState("light");
   const authRef = useRef(authAPI());
-  const loginStatus = useSelector((state) => state.auth.isLoggedIn);
+  const loginStatus = useSelector((state) => state.AUTH.isLoggedIn);
   console.log(loginStatus);
 
   const toggleTheme = () => {

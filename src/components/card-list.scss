@@ -1,0 +1,23 @@
+.user-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 1px 1px 4px rgb(117, 129, 255);
+  padding: 10px;
+  margin: 10px 100px;
+  width: min(50%, 90vw);
+  .left {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  .btn {
+    border: none;
+    padding: 6px 12px;
+    border-radius: 4px;
+    font-weight: 600;
+    background-color: rgb(0, 81, 131);
+    cursor: pointer;
+    color: rgb(253, 251, 251);
+  }
+}

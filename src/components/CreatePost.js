@@ -1,15 +1,15 @@
 import { Button, Form, Input, Modal } from "antd";
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { createPost } from "../Redux/thunk";
 import { useForm } from "antd/es/form/Form";
+import { createPost } from "../Redux/thunk";
 
 export const CreatePost = ({ posts }) => {
   const [openmodal, setOpenmodal] = useState(false);
   const dispatch = useDispatch();
   const [form] = useForm();
 
-  const createPostStatus = useSelector((state) => state.post.createAPIStatus);
+  const createPostStatus = useSelector((state) => state.POST.createAPIStatus);
   const openModel = () => {
     setOpenmodal(true);
   };
