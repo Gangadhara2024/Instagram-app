@@ -14,6 +14,30 @@ export const fetchAllSuggestions = async (dispatch) => {
   );
 };
 
+export const fetchAllFollowers = async (dispatch) => {
+  dispatch(updateTabKey({ tabId: TabKeys.FOLLOWERS, apiStatus: "pending" }));
+  const { success, data } = await Request({ url: Endpoints.followers });
+  dispatch(
+    updateTabKey({
+      tabId: TabKeys.FOLLOWERS,
+      apiStatus: success ? "success" : "error",
+      ...(success && { data }),
+    })
+  );
+};
+
+export const fetchAllFollowing = async (dispatch) => {
+  dispatch(updateTabKey({ tabId: TabKeys.FOLLOWING, apiStatus: "pending" }));
+  const { success, data } = await Request({ url: Endpoints.following });
+  dispatch(
+    updateTabKey({
+      tabId: TabKeys.FOLLOWING,
+      apiStatus: success ? "success" : "error",
+      ...(success && { data }),
+    })
+  );
+};
+
 export const followUser = (userId) => {
   return async (dispatch) => {
     dispatch(updateActionStatus({ apiStatus: "pending" }));

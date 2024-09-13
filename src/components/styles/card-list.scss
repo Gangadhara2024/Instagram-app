@@ -4,8 +4,8 @@
   align-items: center;
   box-shadow: 1px 1px 4px rgb(117, 129, 255);
   padding: 10px;
-  margin: 10px 100px;
-  width: min(50%, 90vw);
+  margin: 10px 60px;
+  object-fit: fill;
   .left {
     display: flex;
     flex-direction: column;

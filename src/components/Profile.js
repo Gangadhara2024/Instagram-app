@@ -1,6 +1,8 @@
 import { Tabs } from "antd";
 import "./styles/profile.scss";
 import Suggestions from "./Suggestions";
+import Followers from "./Followers";
+import Following from "./Following";
 
 const Profile = () => {
   return (
@@ -10,12 +12,12 @@ const Profile = () => {
           {
             label: "Followers",
             key: "followers",
-            children: <h1>Followers</h1>,
+            children: <Followers />,
           },
           {
             label: "Following",
             key: "following",
-            children: <h1>Following</h1>,
+            children: <Following />,
           },
           {
             label: "Suggestions",

@@ -6,4 +6,6 @@ export const Endpoints = {
   createPost: `${baseUrl}/post/create`,
   suggestions: `${baseUrl}/user/suggestions`,
   follow: `${baseUrl}/user/follow`,
+  followers: `${baseUrl}/user/followers`,
+  following: `${baseUrl}/user/following`,
 };

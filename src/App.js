@@ -20,7 +20,7 @@ const App = () => {
   const toggleTheme = () => {
     setTheme(theme === "dark" ? "light" : "dark");
   };
-  const container = "container " + (theme === "dark" ? "dark-container" : "");
+  const container = "container " + (theme === "dark" ? "dark-container" : "")
 
   if (!loginStatus) {
     return (

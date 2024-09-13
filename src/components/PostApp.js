@@ -14,15 +14,17 @@ const PostApp = () => {
     dispatch(fetchAllPosts);
   }, []);
   return (
-    <div className="home-container">
-      <div className="left-box">
-        <UserInfo />
-        <PostLists />
+    <>
+      <div className="home-container">
+        <div className="left-box">
+          <UserInfo />
+          <PostLists />
+        </div>
+        <div className="right-box">
+          <Profile />
+        </div>
       </div>
-      <div className="right-box">
-        <Profile />
-      </div>
-    </div>
+    </>
   );
 };
 

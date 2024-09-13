@@ -1,22 +1,22 @@
+import { Button, Spin } from "antd";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchAllSuggestions } from "../Redux2/thunk2";
-import { TabKeys } from "../Redux2/Userslice";
-import { Button, Spin } from "antd";
+import { fetchAllFollowers } from "../Redux2/thunk2";
 import CardList from "./CardList";
+import { TabKeys } from "../Redux2/Userslice";
 
-const Suggestions = () => {
+const Followers = () => {
   const dispatch = useDispatch();
   const { apiStatus, list } = useSelector(
-    (state) => state.USERS[TabKeys.SUGGESTIONS]
+    (state) => state.USERS[TabKeys.FOLLOWERS]
   );
 
-  const RetrySuggestions = () => {
-    dispatch(fetchAllSuggestions);
+  const RetryFollowers = () => {
+    dispatch(fetchAllFollowers);
   };
 
   useEffect(() => {
-    RetrySuggestions();
+    RetryFollowers();
   }, []);
 
   if (apiStatus === "init" || apiStatus === "pending") {
@@ -24,7 +24,7 @@ const Suggestions = () => {
   }
   if (apiStatus === "error") {
     return (
-      <Button type="primary" onClick={RetrySuggestions}>
+      <Button type="primary" onClick={RetryFollowers}>
         Retry
       </Button>
     );
@@ -32,10 +32,10 @@ const Suggestions = () => {
   return (
     <div>
       {list.map((user) => (
-        <CardList user={user} key={user._id} tabId={TabKeys.SUGGESTIONS} />
+        <CardList user={user} key={user._id} tabId={TabKeys.FOLLOWERS} />
       ))}
     </div>
   );
 };
 
-export default Suggestions;
+export default Followers;

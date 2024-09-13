@@ -1,12 +1,14 @@
 import { useDispatch, useSelector } from "react-redux";
 import "./styles/card-list.scss";
 import { Button } from "antd";
+import { followUser } from "../Redux2/thunk2";
+import { TabKeys } from "../Redux2/Userslice";
 
-const CardList = ({ user }) => {
+const CardList = ({ user, tabId }) => {
   const apiStatus = useSelector((state) => state.USERS.actions[user._id]);
   const dispatch = useDispatch();
   const FollowBtn = () => {
-    dispatch();
+    dispatch(followUser(user._id));
   };
   return (
     <div className="user-card">
@@ -18,12 +20,15 @@ const CardList = ({ user }) => {
         <span>{user.city} </span>
       </div>
       <Button
-        loading={apiStatus === "success"}
+        loading={apiStatus === "pending"}
         className="btn"
         onClick={FollowBtn}
-        disabled={apiStatus === "success"}
       >
-        {apiStatus === "success" ? "Following" : "Follow"}
+        {user.following
+          ? "Unfollow"
+          : tabId === TabKeys.FOLLOWERS
+          ? "FollowBack"
+          : "Follow"}
       </Button>
     </div>
   );
